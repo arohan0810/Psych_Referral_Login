@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Facility Admin Login</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"></script>
+  <script src="firebase-config.js"></script>
+</head>
+<body>
+  <h1>Facility Admin Portal</h1>
+
+  <div id="loginSection">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Facility email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p id="loginError" style="color: red;"></p>
+  </div>
+
+  <div id="formSection" style="display: none;">
+    <h2>Update Facility Info</h2>
+    <form id="facilityForm">
+      <label>Available Male Beds: <input type="number" id="maleBeds" /></label><br />
+      <label>Available Female Beds: <input type="number" id="femaleBeds" /></label><br />
+      <label>Accepted Insurance (comma-separated): <input type="text" id="insurances" /></label><br />
+      <label>Accepted Cases (comma-separated): <input type="text" id="cases" /></label><br />
+      <label>Requirements: <textarea id="requirements"></textarea></label><br />
+      <button type="submit">Update Info</button>
+    </form>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
